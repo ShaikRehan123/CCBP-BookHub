@@ -1,5 +1,9 @@
+/* eslint-disable */
 import './App.css'
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
 import Login from './components/Login'
+import ProtectedRoute from './components/ProtectedRoute'
+
 // use the below bookshelvesList for rendering read status of book items in Bookshelves Route
 
 const bookshelvesList = [
@@ -24,7 +28,16 @@ const bookshelvesList = [
     label: 'Want to Read',
   },
 ]
-
-const App = () => <Login />
+const Home = () => {
+  return(
+    <h1>Home</h1>
+  )
+}
+const App = () => (
+<Switch>
+  <Route exact path="/login" component={Login} />
+  <ProtectedRoute exact path="/" component={Home} />
+</Switch>
+)
 
 export default App
