@@ -3,6 +3,7 @@ import './App.css'
 import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
 import Login from './components/Login'
 import ProtectedRoute from './components/ProtectedRoute'
+import NavBar from './components/Navbar'
 
 // use the below bookshelvesList for rendering read status of book items in Bookshelves Route
 
@@ -30,7 +31,9 @@ const bookshelvesList = [
 ]
 const Home = () => {
   return(
-    <h1>Home</h1>
+    <div>
+      <NavBar/>
+    </div>
   )
 }
 const App = () => (
