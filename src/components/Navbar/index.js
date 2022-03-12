@@ -1,52 +1,35 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./index.css";
+import { useHistory } from "react-router-dom";
 
-const NavBar = () => {
+import "./index.css";
+import Cookie from 'js-cookie'
+const NavBar = props => {
+  const history = useHistory()
+  const handleClick = () => {
+    Cookie.remove("jwt_token")
+    history.replace('/login')
+  }
 
   return (
-    <>
-      <nav className="navbar">
-        <div className="nav-container">
-          <NavLink exact to="/" className="nav-logo">
-            BookHub
-            <i className="fas fa-code"></i>
-          </NavLink>
-
-          <ul className={ "nav-menu"}>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/about"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Bookshelves
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <Button
-                onClick
-              >
-                Bookshelves
-              </Button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </>
+    <div className="navbar">
+      <div className="Logo" onClick={() => {
+        history.push('/')
+      }}>
+        BOOKHUB
+      </div>
+      <div className="pages-and-btns">
+        <h1 className="pg-hdr" onClick={() => {
+          history.push('/')
+        }}>Home</h1>
+        <h1 className="pg-hdr" onClick={() => {
+          history.push('/bookshelves')
+        }}>Bookshelves</h1>
+        <button className="lgt-btn" onClick={handleClick}>
+          Logout
+        </button>
+      </div>
+    </div>
   );
 }
 

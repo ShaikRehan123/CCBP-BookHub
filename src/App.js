@@ -1,6 +1,6 @@
 /* eslint-disable */
 import './App.css'
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
+import { Route, Switch} from 'react-router-dom'
 import Login from './components/Login'
 import ProtectedRoute from './components/ProtectedRoute'
 import NavBar from './components/Navbar'
@@ -29,17 +29,10 @@ const bookshelvesList = [
     label: 'Want to Read',
   },
 ]
-const Home = () => {
-  return(
-    <div>
-      <NavBar/>
-    </div>
-  )
-}
 const App = () => (
 <Switch>
   <Route exact path="/login" component={Login} />
-  <ProtectedRoute exact path="/" component={Home} />
+  <ProtectedRoute exact path="/" component={NavBar} />
 </Switch>
 )
 
