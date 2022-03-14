@@ -3,7 +3,7 @@ import './App.css'
 import { Route, Switch} from 'react-router-dom'
 import Login from './components/Login'
 import ProtectedRoute from './components/ProtectedRoute'
-import NavBar from './components/Navbar'
+import Home from './components/Home'
 
 // use the below bookshelvesList for rendering read status of book items in Bookshelves Route
 
@@ -32,7 +32,7 @@ const bookshelvesList = [
 const App = () => (
 <Switch>
   <Route exact path="/login" component={Login} />
-  <ProtectedRoute exact path="/" component={NavBar} />
+  <ProtectedRoute exact path="/" component={Home} />
 </Switch>
 )
 
