@@ -20,12 +20,18 @@ const Home = () => {
     setLoading(true);
     fetch(url, options)
       .then((response) => response.json())
-      // 4. Setting *dogImage* to the image url that we received from the response above
       .then((data) => {
         setLoading(false);
         setBooks(data.books);
       });
   }, []);
+
+  if (loading)
+    return (
+      <div className="loader-container" testid="loader">
+        <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
+      </div>
+    );
   return (
     <div>
       <NavBar />
@@ -38,21 +44,13 @@ const Home = () => {
             reccomendations.
           </p>
         </div>
-        {loading ? (
-          <div className="loader-container" testid="loader">
-            <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
-          </div>
-        ) : (
-          <div className="Books-Container">
-            <div className="Books-Container-Header">
-              <h1>Top Rated Books</h1>
-              <span>
-                <button className="fb-button">Find Books</button>
-              </span>
-            </div>
-            <BookSlider books={books} />
-          </div>
-        )}
+
+        <div className="Books-Container">
+          <span>
+            <button className="fb-button">Find Books</button>
+          </span>
+          <BookSlider books={books} />
+        </div>
       </div>
     </div>
   );

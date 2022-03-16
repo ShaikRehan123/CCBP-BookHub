@@ -13,13 +13,12 @@ const BookSlider = (props) => {
     slidesToShow: 4
   };
   const { books } = props;
-  console.log(books);
 
   return (
     <>
       <Slider {...settings}>
         {books.map((eachBook) => (
-          <BookItem key={eachBook.id} bookDetails={eachBook} />
+          <BookItem key={eachBook.id} book={eachBook} />
         ))}
       </Slider>
     </>
