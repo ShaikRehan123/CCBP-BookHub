@@ -8,9 +8,10 @@ import BookItem from "../BookItem";
 
 const BookSlider = (props) => {
   const settings = {
-    dots: false,
+    dots: true,
     slidesToScroll: 1,
-    slidesToShow: 4
+    slidesToShow: 4,
+    infinite: true,
   };
   const { books } = props;
 
@@ -18,7 +19,13 @@ const BookSlider = (props) => {
     <>
       <Slider {...settings}>
         {books.map((eachBook) => (
-          <BookItem key={eachBook.id} book={eachBook} />
+          <div
+            style={{
+              paddingRight: "10px",
+            }}
+          >
+            <BookItem key={eachBook.id} book={eachBook} />
+          </div>
         ))}
       </Slider>
     </>

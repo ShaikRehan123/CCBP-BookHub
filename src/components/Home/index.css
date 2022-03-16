@@ -8,9 +8,8 @@
 .Hero-Container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  /* justify-content: center;
+  align-items: center; */
 }
 .loader-container {
   display: flex;
@@ -19,13 +18,13 @@
 }
 .Books-Container {
   background-color: white;
-  display: flex;
-  flex-direction: column;
   /* align-items: center; */
+
   border-radius: 25px;
-  width: 1240px;
-  height: 300px;
-  padding: 10px;
+  width: 1460px;
+  height: 435px;
+  padding: 20px;
+  margin: 5px;
 }
 .Books-Container-Header {
   display: flex;
@@ -33,7 +32,8 @@
 .fb-button {
   background-color: #0284c7;
   color: white;
-  border: 0;
-  padding: 10;
+  border: 0px;
+  padding: 10px;
   cursor: pointer;
+  border-radius: 5px;
 }

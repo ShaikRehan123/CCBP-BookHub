@@ -1,32 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap");
 .navbar {
-    background-color: #1f5156;
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    padding: 25px;
+  background-color: #1f5156;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 25px;
 }
-  
-.Logo{
+
+.Logo {
   margin-left: 10;
   color: white;
   font-size: 2rem;
-  font-family: 'Almendra SC';
+  font-family: "Almendra SC";
   cursor: pointer;
 }
 
-.pages-and-btns{
-   justify-content: center;
-   align-items: center;
-   display: flex;
-   padding: 10px;
+.pages-and-btns {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 10px;
 }
-.lgt-btn{
+.lgt-btn {
   text-align: center;
   height: 45px;
   width: 80px;
@@ -38,12 +38,12 @@
   font-size: 1rem;
 }
 
-.pg-hdr{
+.pg-hdr {
   font-size: 1rem;
   margin-right: 10px;
   color: whitesmoke;
   cursor: pointer;
 }
-.pg-hdr:first-child{
-  color:aqua;
+.pg-hdr:first-child {
+  color: aqua;
 }

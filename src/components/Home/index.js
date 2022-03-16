@@ -2,19 +2,22 @@ import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import Loader from "react-loader-spinner";
 import BookSlider from "../BooksSlider";
+import { useHistory } from "react-router-dom";
 import NavBar from "../Navbar";
 import "./index.css";
+import Footer from "../Footer";
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [books, setBooks] = useState([]);
+  const history = useHistory();
   // import books from this url https://apis.ccbp.in/book-hub/top-rated-books using useEffect
   const jwtToken = Cookies.get("jwt_token");
   const url = "https://apis.ccbp.in/book-hub/top-rated-books";
   const options = {
     headers: {
-      Authorization: `Bearer ${jwtToken}`
+      Authorization: `Bearer ${jwtToken}`,
     },
-    method: "GET"
+    method: "GET",
   };
   useEffect(() => {
     setLoading(true);
@@ -47,11 +50,21 @@ const Home = () => {
 
         <div className="Books-Container">
           <span>
-            <button className="fb-button">Find Books</button>
+            <button
+              className="fb-button"
+              onClick={() => {
+                history.push("/shelf");
+              }}
+            >
+              Find Books
+            </button>
           </span>
-          <BookSlider books={books} />
+          <div className="books-slider">
+            <BookSlider books={books} />
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
