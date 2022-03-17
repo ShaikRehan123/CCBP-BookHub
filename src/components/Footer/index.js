@@ -74,7 +74,7 @@ const Footer = () => {
           fontWeight: "bold",
         }}
       >
-        Follow Us
+        Contact Us
       </h1>
     </div>
   );

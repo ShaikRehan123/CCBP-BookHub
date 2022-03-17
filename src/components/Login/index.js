@@ -69,7 +69,7 @@ class Login extends Component {
         </label>
         <div className="password-container">
           <input
-            type="password"
+            type={isPasswordVisible ? "text" : "password"}
             id="password"
             className="password-input-field"
             value={password}

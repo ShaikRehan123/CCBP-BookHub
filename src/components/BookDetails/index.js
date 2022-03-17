@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import NavBar from "../Navbar";
 import Loader from "react-loader-spinner";
 import Book from "../Book";
+import Footer from "../Footer";
 const BookDetails = () => {
   const [loading, setLoading] = useState(false);
   const [book, setBook] = useState([]);
@@ -114,6 +115,13 @@ const BookDetails = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        style={{
+          display: "hidden",
+        }}
+      >
+        <Footer />
       </div>
     </>
   );
