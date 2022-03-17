@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./components/Home";
 import BookShelves from "./components/BookShelves";
 import BookDetails from "./components/BookDetails";
+import NotFound from "./components/NotFound";
 
 // use the below bookshelvesList for rendering read status of book items in Bookshelves Route
 
@@ -43,6 +44,7 @@ const App = () => (
       )}
     />
     <ProtectedRoute exact path="/book/:id" component={BookDetails} />
+    <Route component={NotFound} />
   </Switch>
 );
 

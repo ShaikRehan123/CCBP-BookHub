@@ -25,13 +25,13 @@ const BookDetails = () => {
         setBook(data.book_details);
       });
   }, [url]);
+  const { about_book, about_author } = book;
   if (loading)
     return (
       <div className="loader-container" testid="loader">
         <Loader type="TailSpin" color="#0284C7" height={50} width={50} />
       </div>
     );
-  const { about_book, about_author } = book;
   return (
     <>
       <NavBar />

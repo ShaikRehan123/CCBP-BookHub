@@ -19,13 +19,13 @@ const BookSlider = (props) => {
     <>
       <Slider {...settings}>
         {books.map((eachBook) => (
-          <div
+          <ul
             style={{
               paddingRight: "10px",
             }}
           >
             <BookItem key={eachBook.id} book={eachBook} />
-          </div>
+          </ul>
         ))}
       </Slider>
     </>

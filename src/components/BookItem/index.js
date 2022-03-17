@@ -4,12 +4,13 @@ const BookItem = (props) => {
   const { book } = props;
   const history = useHistory();
   return (
-    <div className="bookItem">
+    <li className="bookItem">
       <img
         src={book.cover_pic}
         className="cover_pic"
         onClick={() => {
           history.push(`/book/${book.id}`);
+          p;
         }}
         style={{
           cursor: "pointer",
@@ -22,8 +23,8 @@ const BookItem = (props) => {
       >
         {book.title}
       </h1>
-      <p>{book.author_name}</p>
-    </div>
+      <h1>{book.author_name}</h1>
+    </li>
   );
 };
 
