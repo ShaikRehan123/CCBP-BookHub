@@ -16,14 +16,20 @@ const BookItem = (props) => {
           cursor: "pointer",
         }}
       />
-      <h1
+      <p
         style={{
           fontSize: "18px",
         }}
       >
         {book.title}
+      </p>
+      <h1
+        style={{
+          fontSize: "10px",
+        }}
+      >
+        {book.author_name}
       </h1>
-      <h1>{book.author_name}</h1>
     </li>
   );
 };
